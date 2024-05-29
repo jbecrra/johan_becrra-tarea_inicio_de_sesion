@@ -19,7 +19,16 @@ while True:
             print("ERROR! debe ingresar un numero entero")
     if opc==1:
         os.system('cls')
-        pass
+        print("INICIO DE SESION")
+        nombre=input("ingrese nombre: ")
+        password=input("ingrese contraseña: ")
+        for x in range(len(usuarios)):
+            if usuarios[x]["nombre"]==nombre:
+                if usuarios[x]["password"]==password:
+                    print("inicio de sesion exitoso!")
+            else:
+                print("usuario o contraseña erronea!")
+        time.sleep(3)
     elif opc==2:
         os.system('cls')
         print("REGISTRO DE USUARIO")
