@@ -1,16 +1,27 @@
 import os
 import time
 import msvcrt
-
-print("1. Inicio de sesión")
-print("2. Registrar usuario")
-print("3. Eleiminar usuario")
-print("4. Salir")
+usuarios=[] 
 while True:
-    opc=int(input("ingrese opcion: "))
+    os.system('cls')
+    print("1. Inicio de sesión")
+    print("2. Registrar usuario")
+    print("3. Eleiminar usuario")
+    print("4. Salir")
+    while True:
+        try:
+            opc=int(input("ingrese opcion: "))
+            if opc in(1,2,3,4,):
+                break
+            else:
+                print("ERROR! debe ingresar una opcion del menú")
+        except:
+            print("ERROR! debe ingresar un numero entero")
     if opc==1:
+        os.system('cls')
         pass
     elif opc==2:
+        os.system('cls')
         print("REGISTRO DE USUARIO")
         nombre=input("ingrese nombre: ")
         password=input("ingrese contraseña: ")
@@ -18,8 +29,19 @@ while True:
             "nombre": nombre,
             "password": password
         }
-        print("usuario agregado con éxito!")
+        usuarios.append(usuario)
+        print("USUARIO AGREGADO!")
+        time.sleep(3)
     elif opc==3:
-        pass
+        os.system('cls')
+        print("ELIMINAR USUARIO!")
+        nombre=input("ingrese el nombre: ")
+        for x in range(len(usuarios)):
+            if usuarios[x]["nombre"]==nombre:
+                usuarios.pop(x)
+                break
+        print("USUARIO ELIMINADO!")
+        time.sleep(3)
     else:
         print("ADIOS!")
+        break
