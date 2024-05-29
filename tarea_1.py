@@ -11,14 +11,15 @@ while True:
     if opc==1:
         pass
     elif opc==2:
-        pass
+        print("REGISTRO DE USUARIO")
+        nombre=input("ingrese nombre: ")
+        password=input("ingrese contraseña: ")
+        usuario={
+            "nombre": nombre,
+            "password": password
+        }
+        print("usuario agregado con éxito!")
     elif opc==3:
         pass
     else:
         print("ADIOS!")
-
-
-usuario={
-    "nombre": nombre,
-    "password": password
-}
